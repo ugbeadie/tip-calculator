@@ -20,6 +20,10 @@ export const StyledLeft = styled.div`
       border-radius: 6px;
       border: none;
       outline: none;
+      
+      &:focus {
+        border: 3px solid hsl(172, 67%, 45%);
+      }
     }
   }
 
@@ -29,10 +33,9 @@ export const StyledLeft = styled.div`
 
     .grid {
       display: grid;
-      grid-template-columns: 31% 31% 31%;
+      grid-template-columns: repeat(3, 1fr);
       gap: 15px;
-      margin: 10px 0 30px;
-      place-items: center;
+      margin: 15px 0;   
 
       @media (max-width: ${({ theme }) => theme.tablet}) {
         grid-template-columns: 30% 30% 30%;
@@ -42,38 +45,62 @@ export const StyledLeft = styled.div`
         grid-template-columns: 47.5% 47.5%;
         
       }
-
-      .custom_tip_percent {
-        font-family: "Space Mono", monospace;
-        color: hsl(183, 100%, 15%);
-        background-color: hsl(185, 41%, 84%);
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        font-size: 24px;
-        font-weight: 700;
-        padding: 12px 0;
-        border: none;
-        outline: none;
-        border-radius: 6px;
-        cursor: pointer;
-
-        @media (max-width: ${({ theme }) => theme.tablet}) {
-          font-size: 18px;
-        }
       }
     }
   }
 `;
 
-export const StyledButton = styled.button`
+export const StyledTipButton = styled.div`
+  position: relative;
+
+  [name="tip"] {
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+
+    &:hover + .tip_btn {
+      color: hsl(183, 100%, 15%);
+      background-color: hsl(185, 41%, 84%);
+    }
+
+    &:checked + .tip_btn {
+      color: hsl(183, 100%, 15%);
+      background-color: hsl(172, 67%, 45%);
+    }
+  }
+
+  .tip_btn {
+    font-family: "Space Mono", monospace;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: hsl(185, 41%, 84%);
+    background-color: hsl(183, 100%, 15%);
+    font-size: 24px;
+    font-weight: 700;
+    padding: 12px 0;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+
+    @media (max-width: ${({ theme }) => theme.tablet}) {
+      font-size: 18px;
+    }
+  }
+`;
+
+export const StyledCustomInput = styled.input`
   font-family: "Space Mono", monospace;
+  color: hsl(183, 100%, 15%);
+  background-color: hsl(185, 41%, 84%);
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   font-size: 24px;
   font-weight: 700;
   padding: 12px 0;
@@ -81,11 +108,36 @@ export const StyledButton = styled.button`
   outline: none;
   border-radius: 6px;
   cursor: pointer;
-  color: hsl(185, 41%, 84%);
-  background-color: hsl(183, 100%, 15%);
+
+  &:focus {
+    border: 3px solid hsl(172, 67%, 45%);
+  }
 
   @media (max-width: ${({ theme }) => theme.tablet}) {
     font-size: 18px;
   }
 `;
+
+// export const StyledButton = styled.button`
+//   font-family: "Space Mono", monospace;
+//   width: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   color: hsl(185, 41%, 84%);
+//   background-color: hsl(183, 100%, 15%);
+//   font-size: 24px;
+//   font-weight: 700;
+//   padding: 12px 0;
+//   border: none;
+//   outline: none;
+//   border-radius: 6px;
+//   cursor: pointer;
+
+  
+
+//   @media (max-width: ${({ theme }) => theme.tablet}) {
+//     font-size: 18px;
+//   }
+// `;
 

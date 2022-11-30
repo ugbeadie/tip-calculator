@@ -34,8 +34,9 @@ export const StyledRight = styled.div`
       }
     }
   }
+`;
 
-  button {
+export const StyledResetButton = styled.button`
     font-family: "Space Mono", monospace;
     width: 100%;
     color: hsl(183, 100%, 15%);
@@ -47,6 +48,10 @@ export const StyledRight = styled.div`
     border-radius: 6px;
     border: none;
 
+    &:hover {
+      cursor: pointer;
+    }
+
     @media (max-width: ${({ theme }) => theme.tablet}) {
       margin-top: 120px;
     }
@@ -54,5 +59,4 @@ export const StyledRight = styled.div`
     @media (max-width: ${({ theme }) => theme.mobile}) {
       margin-top: 10px;
     }
-  }
-`;
+`

@@ -18,6 +18,11 @@ const GlobalStyles = createGlobalStyle`
         direction: rtl;
     }
 
+    input:focus {
+        border: 1px solid red
+        outline: red
+    }
+
     input::-webkit-inner-spin-button,
         .no-spin::-webkit-outer-spin-button {
         -webkit-appearance: none !important;

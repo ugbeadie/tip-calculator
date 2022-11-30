@@ -1,7 +1,8 @@
 import React from 'react'
-import { StyledRight } from './styles/Right.styled';
+import { StyledRight, StyledResetButton } from './styles/Right.styled';
 
-const Right = () => {
+const Right = ({tipAmount, total, resetBillAmount}) => {
+
   return (
     <StyledRight>
       <div className="amount">
@@ -10,7 +11,7 @@ const Right = () => {
           <p>/ person</p>
         </div>
         <div className="price">
-          $<span>0.00</span>
+          $<span>{tipAmount}</span>
         </div>
       </div>
 
@@ -20,11 +21,13 @@ const Right = () => {
           <p>/ person</p>
         </div>
         <div className="price">
-          $<span>0.00</span>
+          $<span>{total}</span>
         </div>
       </div>
 
-      <button>RESET</button>
+      <StyledResetButton onClick={resetBillAmount}>
+        RESET
+      </StyledResetButton>
     </StyledRight>
   );
 }
